@@ -27,6 +27,8 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 #
+import numpy as np
+
 class OMNIBUS():
     def __init__(self, sizex, sizey, enl, sigma, b1, b2):
         self.enl = enl
@@ -95,14 +97,14 @@ class OMNIBUS():
                             (self.cnt-1)*np.log(self.cnt-1.)) +
                          (self.cnt-1)*logdetsumj1 + logdetj -
                          self.cnt*logdetsumj)
-        rhoj = 1 - (2.*p**2 - 1)*
+        rhoj = 1 - (2.*p**2 - 1)* \
                    (1. + 1./(self.cnt*(self.cnt-1)))/(6.*p*self.enl)
-        omega2j = -(f/4.)*(1.-1./rhoj)**2 +
-                   (1./(24.*self.enl*self.enl))*p*p*(p*p-1)*
+        omega2j = -(f/4.)*(1.-1./rhoj)**2 + \
+                   (1./(24.*self.enl*self.enl))*p*p*(p*p-1)* \
                      (1+(2.*self.cnt-1)/(self.cnt*(self.cnt-1))**2)/rhoj**2
         Z = -2*rhoj*lnRj
 
-        res = 1.0 - ((1.-omega2j)*stats.chi2.cdf(Z,[f])+
+        res = 1.0 - ((1.-omega2j)*stats.chi2.cdf(Z,[f])+ \
                      omega2j*stats.chi2.cdf(Z,[f+4]))
         cmap = res <= self.sigma
         self.cnt = np.where(cmap, 1, self.cnt)

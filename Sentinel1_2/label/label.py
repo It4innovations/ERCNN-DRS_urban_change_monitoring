@@ -14,8 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
+import sys
 sys.path.append('../../external/')
-from label import OMNIBUS
+from omnibus import OMNIBUS
 
 class Synthetic_Label():
     @staticmethod
@@ -27,7 +28,7 @@ class Synthetic_Label():
         omni = OMNIBUS(window.shape[1], window.shape[2], 4, sigma, window[0,:,:,0], None)
 
         for idx in range(1, len(window)):
-            chmap_tmp, omni.PV(window[idx, :, :, 0], window[idx, :, :, 1])
+            chmap_tmp = omni.PV(window[idx, :, :, 0], window[idx, :, :, 1])
             chmap = np.where(chmap_tmp == True, chmap + 1, chmap)
 
         return chmap/norm_by
@@ -84,15 +85,15 @@ class Synthetic_Label():
                    s1_ascending.shape[2], s1_descending.shape[2], s2.shape[2])
 
         s2_before_avg = np.mean(s2_before, axis=0)
-        s2_before_ebbi = Generate_Label.ENDISI_S2(s2_before_avg, beta1, shift)
+        s2_before_ebbi = Synthetic_Label.ENDISI_S2(s2_before_avg, beta1, shift)
 
         s2_after_avg = np.mean(s2_after, axis=0)
-        s2_after_ebbi = Generate_Label.ENDISI_S2(s2_after_avg, beta3, shift)
+        s2_after_ebbi = Synthetic_Label.ENDISI_S2(s2_after_avg, beta3, shift)
 
         s2_diff = np.abs(s2_after_ebbi - s2_before_ebbi)
 
-        chmap_asc = Generate_Label.omnibus_chmap_dual(s1_ascending, s1_ascending.shape[0], 0.001)
-        chmap_dsc = Generate_Label.omnibus_chmap_dual(s1_descending, s1_descending.shape[0], 0.001)
+        chmap_asc = Synthetic_Label.omnibus_chmap_dual(s1_ascending, s1_ascending.shape[0], 0.001)
+        chmap_dsc = Synthetic_Label.omnibus_chmap_dual(s1_descending, s1_descending.shape[0], 0.001)
 
         chmap = (chmap_asc+chmap_dsc)/2
         return np.float32(np.clip(chmap * s2_diff * 10, 0.0, 1.0))
@@ -103,9 +104,9 @@ class Synthetic_Label():
         import numpy as np
 
         s2_before_avg = np.mean(s2_before, axis=0)
-        s2_before_coeffs = Generate_Label.ENDISI_S2_beta_coeff(s2_before_avg)
+        s2_before_coeffs = Synthetic_Label.ENDISI_S2_beta_coeff(s2_before_avg)
         s2_after_avg = np.mean(s2_after, axis=0)
-        s2_after_coeffs = Generate_Label.ENDISI_S2_beta_coeff(s2_after_avg)
+        s2_after_coeffs = Synthetic_Label.ENDISI_S2_beta_coeff(s2_after_avg)
         return np.array([s2_before_coeffs, s2_after_coeffs])
 
     @staticmethod

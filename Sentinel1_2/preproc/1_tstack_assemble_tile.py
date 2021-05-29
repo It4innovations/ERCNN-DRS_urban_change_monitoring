@@ -298,6 +298,9 @@ def process_site(site):
     min_height_S2, min_width_S2, \
         min_height_S1, min_width_S1 = get_min_resolution(site)
 
+    # Just for testing (smaller subset)
+    min_height_S2=min_width_S2=min_height_S1=min_width_S1 = 200
+
     print("\tResolutions:")
     print("\t\tS2: {}, {}".format(min_height_S2, min_width_S2))
     print("\t\tS1: {}, {}".format(min_height_S1, min_width_S1))
@@ -384,7 +387,7 @@ def process_site(site):
     writer_p.start()
     # ^^^ Setup multiprocessing ^^^
 
-    # vv Iterate over samples vvv
+    # vvv Iterate over samples vvv
     idx = 0
     new_s1_asc = True
     new_s1_dsc = True

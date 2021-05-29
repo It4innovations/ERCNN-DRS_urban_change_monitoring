@@ -27,7 +27,7 @@ class Synthetic_Label():
         omni = OMNIBUS(window.shape[1], window.shape[2], 3, sigma, window[0,:,:,0], None)
 
         for idx in range(1, len(window)):
-            chmap_tmp, omni.PV(window[idx, :, :, 0], None)
+            chmap_tmp = omni.PV(window[idx, :, :, 0], None)
             chmap = np.where(chmap_tmp == True, chmap + 1, chmap)
 
         return chmap/norm_by
