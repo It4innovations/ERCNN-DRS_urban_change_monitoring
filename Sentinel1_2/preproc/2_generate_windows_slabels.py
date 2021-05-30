@@ -40,8 +40,8 @@ from label import Synthetic_Label
 # PARAMETERS FOR TRAINING #####################################################
 save_csv = True
 sites={"Limassol":[0.5], "Rotterdam":[0.25], "Liege":[0.25]}
-tf_record_file_path = "/data/data_temp/blended/test_s12/"
-tf_record_out_path = "/data/data_temp/blended/training_s12_test/"
+tf_record_file_path = "/data/data_temp/tstack_s12/"
+tf_record_out_path = "/data/data_temp/training_s12/"
 tf_record_file_out_train_path = tf_record_out_path + "/train/"
 tf_record_file_out_val_path = tf_record_out_path + "/val/"
 beta_coeffs_file = tf_record_out_path + "/beta_coeffs"

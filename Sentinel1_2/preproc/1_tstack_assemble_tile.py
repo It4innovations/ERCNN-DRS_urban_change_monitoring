@@ -41,7 +41,7 @@ sites=["Liege", "Rotterdam", "Limassol"]
 
 data_dir_root_S2 = "/data/eo_data/S2/"
 data_dir_root_S1 = "/data/eo_data/S1/"
-tf_record_file_path = "/data/data_temp/blended/test_s12/"
+tf_record_file_path = "/data/data_temp/tstack_s12/"
 
 tile_size_x = 32
 tile_size_y = 32
