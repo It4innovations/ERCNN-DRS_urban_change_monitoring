@@ -74,7 +74,7 @@ no_channels = 17
 sar = False
 combined = True
 
-best_weights_file = "./snapshots/best_weights.hdf5"
+best_weights_file = "./snapshots/best_weights_ercnn_drs.hdf5"
 best_weights_train_file = "./snapshots/best_weights_{epoch:04d}.hdf5"
 #best_weights_continue_with = ""
 
