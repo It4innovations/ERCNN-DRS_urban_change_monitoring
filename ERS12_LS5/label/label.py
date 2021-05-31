@@ -14,8 +14,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
+import sys
 sys.path.append('../../external/')
-from label import OMNIBUS
+from omnibus import OMNIBUS
 
 class Synthetic_Label():
     @staticmethod
@@ -85,15 +86,15 @@ class Synthetic_Label():
                    ers12_ascending.shape[2], ers12_descending.shape[2], ls5.shape[2])
 
         ls5_before_avg = np.mean(ls5_before, axis=0)
-        ls5_before_ebbi = Generate_Label.ENDISI_LS5(ls5_before_avg, beta1, shift)
+        ls5_before_ebbi = Synthetic_Label.ENDISI_LS5(ls5_before_avg, beta1, shift)
 
         ls5_after_avg = np.mean(ls5_after, axis=0)
-        ls5_after_ebbi = Generate_Label.ENDISI_LS5(ls5_after_avg, beta3, shift)
+        ls5_after_ebbi = Synthetic_Label.ENDISI_LS5(ls5_after_avg, beta3, shift)
 
         ls5_diff = np.abs(ls5_after_ebbi - ls5_before_ebbi)
 
-        chmap_asc = Generate_Label.omnibus_chmap(ers12_ascending, ers12_ascending.shape[0], 0.1)
-        chmap_dsc = Generate_Label.omnibus_chmap(ers12_descending, ers12_descending.shape[0], 0.1)
+        chmap_asc = Synthetic_Label.omnibus_chmap(ers12_ascending, ers12_ascending.shape[0], 0.1)
+        chmap_dsc = Synthetic_Label.omnibus_chmap(ers12_descending, ers12_descending.shape[0], 0.1)
 
         chmap = (chmap_asc+chmap_dsc)/2
         return np.float32(np.clip(chmap * ls5_diff * 30, 0.0, 1.0))
@@ -104,10 +105,10 @@ class Synthetic_Label():
         import numpy as np
 
         ls5_before_avg = np.mean(ls5_before, axis=0)
-        ls5_before_coeffs = Generate_Label.ENDISI_LS5_beta_coeff(ls5_before_avg)
+        ls5_before_coeffs = Synthetic_Label.ENDISI_LS5_beta_coeff(ls5_before_avg)
 
         ls5_after_avg = np.mean(ls5_after, axis=0)
-        ls5_after_coeffs = Generate_Label.ENDISI_LS5_beta_coeff(ls5_after_avg)
+        ls5_after_coeffs = Synthetic_Label.ENDISI_LS5_beta_coeff(ls5_after_avg)
 
         return np.array([ls5_before_coeffs, ls5_after_coeffs])
 
