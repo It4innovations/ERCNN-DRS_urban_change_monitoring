@@ -1,6 +1,15 @@
 # ERCNN-DRS Urban Change Monitoring
 This project hosts the Ensemble of Recurrent Convolutional Neural Networks for Deep Remote Sensing (ERCNN-DRS) used for urban change monitoring with ERS-1/2 & Landsat 5 TM, and Sentinel 1 & 2 remote sensing mission pairs. It was developed for demonstration purposes in the ESA BLENDED<sup>1</sup> project.
 
+## Features
+- Takes SAR and optical multispectral observation time series of hundreds up to thousands of observations (deep-temporal)
+- Demonstrates usage for two mission pairs: ERS-1/2 & Landsat 5 TM (1991-2011), and 6m for Sentinel 1 & 2 (2017-now)
+- Predicts changes which happened in one time window (1y for ERS-1/2 & Landsat 5 TM, and 6m for Sentinel 1 & 2)
+- The long mission times allow monitoring of urban changes over larger time frames
+
+## Usage
+TBD
+
 ## Examples
 ### ERS-1/2 & Landsat 5 TM
 ERS-1/2 & Landsat 5 TM example of Liège. Top row are Landsat 5 TM true color observations (left, right) with change prediction (middle). Bottom rows are corresponding very-high resolution imagery from Google Earth(tm), (c) 2021 Maxar Technologies with predictions superimposed in red.
