@@ -1,5 +1,5 @@
 # ERCNN-DRS Urban Change Monitoring
-This project hosts the Ensemble of Recurrent Convolutional Neural Networks for Deep Remote Sensing (ERCNN-DRS) used for urban change monitoring with ERS-1/2 & Landsat 5 TM, and Sentinel 1 & 2 remote sensing mission pairs. It was developed for demonstration purposes in the ESA BLENDED<sup>1</sup> project.
+This project hosts the Ensemble of Recurrent Convolutional Neural Networks for Deep Remote Sensing (ERCNN-DRS) used for urban change monitoring with ERS-1/2 & Landsat 5 TM, and Sentinel 1 & 2 remote sensing mission pairs. It was developed for demonstration purposes in the ESA Blockchain ENabled DEep Learning for Space Data (BLENDED)<sup>1</sup> project.
 Two neural network models were trained for the two eras (ERS-1/2 & Landsat 5 TM: 1991-2011, and Sentinel 1 & 2: 2017-2021).
 
 ## Features
@@ -14,12 +14,17 @@ For either era, SAR (separated by ascending and descending orbit directions) and
 
 ### Pre-Processing
 Before training, observations from EOPatches need to be processed in two steps:
+![pre-processing steps](./collateral/pre-processing.png)
+
 1. Temporally stacking, assembling and tiling (creates temporary TFRecord files):
     - ERS-1/2 & Landsat 5 TM: [`1_tstack_assemble_tile.py`](./ERS12_LS5/preproc/)
     - Sentinel 1 & 2: [`1_tstack_assemble_tile.py`](./Sentinel1_2/preproc/)
 2. Windowing and labeling (output: TFRecord files):
     - ERS-1/2 & Landsat 5 TM: [`2_generate_windows_slabels.py`](./ERS12_LS5/preproc/)
     - Sentinel 1 & 2: [`2_generate_windows_slabels.py`](./Sentinel1_2/preproc/)
+
+### Model Architecture
+![model architecture](./collateral/model_architecture.png)
 
 ### Training
 Training is executed on the windowed and labeled TFRecord files:
