@@ -1,5 +1,5 @@
 # ERCNN-DRS Urban Change Monitoring
-TBD
+This project hosts the Ensemble of Recurrent Convolutional Neural Networks for Deep Remote Sensing (ERCNN-DRS) used for urban change monitoring with ERS-1/2 & Landsat 5 TM, and Sentinel 1 & 2 remote sensing mission pairs. It was developed for demonstration purposes in the ESA BLENDED<sup>1</sup> project.
 
 # Paper and Citation
 TBD
