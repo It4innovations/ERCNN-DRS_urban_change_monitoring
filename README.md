@@ -23,8 +23,8 @@ Before training, observations from EOPatches need to be processed in two steps:
 
 ### Training
 Training is executed on the windowed and labeled TFRecord files:
-  - ERS-1/2 & Landsat 5 TM: [`train.py`](./ERS12_LS5/preproc/)
-  - Sentinel 1 & 2: [`train.py`](./Sentinel1_2/preproc/)
+  - ERS-1/2 & Landsat 5 TM: [`train.py`](./ERS12_LS5/train/)
+  - Sentinel 1 & 2: [`train.py`](./Sentinel1_2/train/)
 
 ### Usage
 We provide pre-trained networks:
