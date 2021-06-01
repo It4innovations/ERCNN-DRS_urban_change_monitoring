@@ -26,8 +26,8 @@ Training is executed on the windowed and labeled TFRecord files:
   - ERS-1/2 & Landsat 5 TM: [`train.py`](./ERS12_LS5/train/)
   - Sentinel 1 & 2: [`train.py`](./Sentinel1_2/train/)
 
-### Usage
-We provide pre-trained networks:
+### Inference
+We provide pre-trained networks which can be used right away:
   - ERS-1/2 & Landsat 5 TM: [`best_weights_ercnn_drs.hdf5`](./ERS12_LS5/train/snapshots/)
   - Sentinel 1 & 2: [`best_weights_ercnn_drs.hdf5`](./Sentinel1_2/train/snapshots/)
 
