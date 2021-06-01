@@ -1,14 +1,35 @@
 # ERCNN-DRS Urban Change Monitoring
 This project hosts the Ensemble of Recurrent Convolutional Neural Networks for Deep Remote Sensing (ERCNN-DRS) used for urban change monitoring with ERS-1/2 & Landsat 5 TM, and Sentinel 1 & 2 remote sensing mission pairs. It was developed for demonstration purposes in the ESA BLENDED<sup>1</sup> project.
+Two neural network models were trained for the two eras (ERS-1/2 & Landsat 5 TM: 1991-2011, and Sentinel 1 & 2: 2017-2021).
 
 ## Features
-- Takes SAR and optical multispectral observation time series of hundreds up to thousands of observations (deep-temporal)
+- Trained with SAR and optical multispectral observation time series of hundreds up to thousands of observations (deep-temporal)
 - Demonstrates usage for two mission pairs: ERS-1/2 & Landsat 5 TM (1991-2011), and 6m for Sentinel 1 & 2 (2017-now)
 - Predicts changes which happened in one time window (1y for ERS-1/2 & Landsat 5 TM, and 6m for Sentinel 1 & 2)
 - The long mission times allow monitoring of urban changes over larger time frames
 
 ## Usage
-TBD
+### Pre-Requisites
+For either era, SAR (separated by ascending and descending orbit directions) and multispectral optical observations are needed as EOPatches, a format introduced by [eo-learn](https://github.com/sentinel-hub/eo-learn).
+
+### Pre-Processing
+Before training, observations from EOPatches need to be processed in two steps:
+1. Temporally stacking, assembling and tiling (creates temporary TFRecord files):
+    - ERS-1/2 & Landsat 5 TM: [`1_tstack_assemble_tile.py`](./ERS12_LS5/preproc/)
+    - Sentinel 1 & 2: [`1_tstack_assemble_tile.py`](./Sentinel1_2/preproc/)
+2. Windowing and labeling (output: TFRecord files):
+    - ERS-1/2 & Landsat 5 TM: [`2_generate_windows_slabels.py`](./ERS12_LS5/preproc/)
+    - Sentinel 1 & 2: [`2_generate_windows_slabels.py`](./Sentinel1_2/preproc/)
+
+### Training
+Training is executed on the windowed and labeled TFRecord files:
+  - ERS-1/2 & Landsat 5 TM: [`train.py`](./ERS12_LS5/preproc/)
+  - Sentinel 1 & 2: [`train.py`](./Sentinel1_2/preproc/)
+
+### Usage
+We provide pre-trained networks:
+  - ERS-1/2 & Landsat 5 TM: [`best_weights_ercnn_drs.hdf5`](./ERS12_LS5/train/snapshots/)
+  - Sentinel 1 & 2: [`best_weights_ercnn_drs.hdf5`](./Sentinel1_2/train/snapshots/)
 
 ## Examples
 ### ERS-1/2 & Landsat 5 TM
