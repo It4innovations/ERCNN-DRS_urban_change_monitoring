@@ -35,8 +35,6 @@ import horovod.tensorflow.keras as hvd
 from tensorflow.python.keras.utils import losses_utils
 
 import sys
-sys.path.append('../label/')
-from label import Synthetic_Label
 sys.path.append('../model/')
 from model import ERCNN_DRS
 
@@ -45,7 +43,7 @@ hvd.init()
 
 # PARAMETERS FOR TRAINING #####################################################
 sites=["Rotterdam","Limassol"]
-base_dir = "/data_temp/training_s12_random_windows/"
+base_dir = "/data/data_temp/training_s12/"
 tf_record_file_out_train_path = base_dir + "/train/"
 tf_record_file_out_val_path = base_dir + "/val/"
 
@@ -74,7 +72,7 @@ no_channels = 17
 sar = False
 combined = True
 
-best_weights_file = "./snapshots/best_weights_ercnn_drs.hdf5"
+best_weights_file = "./snapshots/best_weights_ercnn_drs_new.hdf5"
 best_weights_train_file = "./snapshots/best_weights_{epoch:04d}.hdf5"
 #best_weights_continue_with = ""
 
@@ -170,7 +168,7 @@ if verbose:
 
 # Drop the end so we got multiple of #GPUs * batch size
 this_rest = this_count % (hvd.size() * batch_size)
-train_cache_dir = "/mnt/nvmeof/train_ds_{}".format(hvd.rank())
+train_cache_dir = "/tmp/train_ds_{}".format(hvd.rank()) #"/mnt/nvmeof/train_ds_{}".format(hvd.rank())
 os.makedirs(train_cache_dir)
 train_ds = train_ds.take(this_count - this_rest) \
                    .shard(num_shards=hvd.size(), index=hvd.rank()) \
@@ -195,7 +193,7 @@ if verbose:
     print("# of validation windows: ", this_count)
 
 this_rest = this_count % hvd.size()
-val_cache_dir = "/mnt/nvmeof/val_ds_{}".format(hvd.rank())
+val_cache_dir = "/tmp/val_ds_{}".format(hvd.rank()) #"/mnt/nvmeof/val_ds_{}".format(hvd.rank())
 os.makedirs(val_cache_dir)
 val_ds = val_ds.take(this_count - this_rest) \
                .shard(num_shards=hvd.size(), index=hvd.rank()) \
@@ -239,8 +237,8 @@ class TanimotoCompl(tf.keras.losses.Loss):
     def __init__(self,
                axis=-1,
                reduction=losses_utils.ReductionV2.AUTO,
-               name='MyLoss'):
-        super(MyLoss, self).__init__(reduction=reduction, name=name)
+               name='TanimotoCompl'):
+        super(TanimotoCompl, self).__init__(reduction=reduction, name=name)
         self._axis = axis
 
     def tanimoto_compl(self, y_true, y_pred):
@@ -251,10 +249,11 @@ class TanimotoCompl(tf.keras.losses.Loss):
         true_pos = tf.keras.backend.sum(y_true_f * y_pred_f)
         true_neg = tf.keras.backend.sum((1 - y_true_f) * (1 - y_pred_f))
 
-        tanimoto = (true_pos)/(tf.keras.backend.sum(y_true_f**2 + y_pred_f**2) -
+        tanimoto = (true_pos)/(tf.keras.backend.sum(             \
+                                    y_true_f**2 + y_pred_f**2) - \
                                true_pos + 0.0001)
-        tanimoto_comp = (true_neg)/(tf.keras.backend.sum((1-y_true_f)**2 +
-                                                         (1-y_pred_f)**2) -
+        tanimoto_comp = (true_neg)/(tf.keras.backend.sum((1-y_true_f)**2 + \
+                                                         (1-y_pred_f)**2) - \
                                     true_neg + 0.0001)
         return 1 - (tanimoto + tanimoto_comp)/2
 
@@ -286,7 +285,7 @@ if "best_weights_continue_with" in globals():
         model.load_weights(best_weights_continue_with)
 
 os.makedirs(log_dir, exist_ok=True)
-log_dir_s = log_dir + datetime.now().strftime("%Y%m%d-%H%M%S") +
+log_dir_s = log_dir + datetime.now().strftime("%Y%m%d-%H%M%S") + \
                       "_" + str(hvd.local_rank())
 os.makedirs(log_dir_s, exist_ok=True)
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir_s,

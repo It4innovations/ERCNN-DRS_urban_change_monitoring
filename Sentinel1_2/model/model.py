@@ -31,9 +31,9 @@ class ERCNN_DRS():
         new_mask = tf.tile(mask, [1, 1, ydim, xdim, filters])
         return new_mask
 
-    def conv_block(self, inp, c, bias, timedist, mask, name):
+    def conv_block(self, inp, filters, bias, timedist, mask, name):
         sub_model = tf.keras.Sequential(name=name+"_seq")
-        sub_model.add(layers.Conv2D(filters=c,
+        sub_model.add(layers.Conv2D(filters=filters,
                                     kernel_size=(3,3),
                                     strides=(1,1),
                                     padding="SAME",
@@ -43,21 +43,21 @@ class ERCNN_DRS():
 
         output = layers.TimeDistributed(sub_model,
                                         name=name)(inputs=inp, mask=mask) \
-                        if timedist else sub_model(input_tensor)
+                        if timedist else sub_model(inp)
         return output
 
-    def conv_lstm(self, inp, c, mask, name):
+    def conv_lstm(self, inp, filters, mask, name):
         convlstm = layers.ConvLSTM2D(
-            filters=c,
+            filters=filters,
             kernel_size=(3,3),
             strides=(1,1),
             padding="SAME",
             use_bias=True,
-            return_state=False
+            return_state=False,
             recurrent_dropout=0.4,
             name=name,
             return_sequences=False
-            )(inputs=input_tensor, mask=mask[:,:,0,0,0])
+            )(inputs=inp, mask=mask[:,:,0,0,0])
         return convlstm
 
     def path_opt(self, buffer_size, tile_size_y, tile_size_x, opt, mask, c):
@@ -89,7 +89,7 @@ class ERCNN_DRS():
                                bias=True,
                                timedist=True,
                                mask=mask_sar,
-                               name="conv_sar_" + str(_c))
+                               name="conv_sar_" + str(c))
 
         mask_sar_2 = self.reconf_mask(mask, tile_size_y, tile_size_x, c)
         output = self.conv_lstm(conv,
