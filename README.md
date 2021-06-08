@@ -37,7 +37,7 @@ We provide pre-trained networks which can be used right away:
   - Sentinel 1 & 2: [`best_weights_ercnn_drs.hdf5`](./Sentinel1_2/train/snapshots/)
 
 ## Examples
-<!--### ERS-1/2 & Landsat 5 TM
+### ERS-1/2 & Landsat 5 TM
 ERS-1/2 & Landsat 5 TM example of Liège. Top row are Landsat 5 TM true color observations (left, right) with change prediction (middle). Bottom rows are corresponding very-high resolution imagery from Google Earth(tm), (c) 2021 Maxar Technologies with predictions superimposed in red.
 
 ![Sentinel 1 & 2 urban changes](./collateral/ers12ls5_example.png)
@@ -53,7 +53,7 @@ Sentinel 1 & 2 example of Liège. Top row are Sentinel 2 true color observations
 
  Series of predictions from above example.
 
-![Sentinel 1 & 2 urban changes time series](./collateral/s12_example_series.png)-->
+![Sentinel 1 & 2 urban changes time series](./collateral/s12_example_series.png)
 
 # Paper and Citation
 TBD
