@@ -1,6 +1,12 @@
 # ERCNN-DRS Urban Change Monitoring
-This project hosts the Ensemble of Recurrent Convolutional Neural Networks for Deep Remote Sensing (ERCNN-DRS) used for urban change monitoring with ERS-1/2 & Landsat 5 TM, and Sentinel 1 & 2 remote sensing mission pairs. It was developed for demonstration purposes in the ESA Blockchain ENabled DEep Learning for Space Data (BLENDED)<sup>1</sup> project.
+This project hosts the Ensemble of Recurrent Convolutional Neural Networks for Deep Remote Sensing (ERCNN-DRS) used for urban change monitoring with ERS-1/2 & Landsat 5 TM, and Sentinel 1 & 2 remote sensing mission pairs. It was developed for demonstration purposes (study case) in the ESA Blockchain ENabled DEep Learning for Space Data (BLENDED)<sup>1</sup> project.
 Two neural network models were trained for the two eras (ERS-1/2 & Landsat 5 TM: 1991-2011, and Sentinel 1 & 2: 2017-2021).
+
+The repository at hand contains only the study case of the BLENDED platform. It can be run on any arbitrary environment or within the BLENDED platform. For the former, IPFS (InterPlanetary File System) is not needed and data can be stored on any file system. The following figure shows the core of the study case with two phases: training with blue arrows and inference (i.e. prediction) with orange arrows. Green arrows denote both training and inference phases.
+
+![BLENDED platform](./collateral/blended_platform.png)
+
+Dashed boxes (processing steps) are not contained here. The actors denote different roles in the BLENDED platform (model owner, data owner and result owner) which are also not relevant for the study case.
 
 ## Features
 - Trained with SAR and optical multispectral observation time series of hundreds up to thousands of observations (deep-temporal)
