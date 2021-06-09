@@ -10,8 +10,12 @@ Dashed boxes (processing steps) are not contained here. The actors denote differ
 
 ## Features
 - Trained with SAR and optical multispectral observation time series of hundreds up to thousands of observations (deep-temporal)
-- Demonstrates usage for two mission pairs: ERS-1/2 & Landsat 5 TM (1991-2011), and 6m for Sentinel 1 & 2 (2017-now)
-- Predicts changes which happened in one time window (1y for ERS-1/2 & Landsat 5 TM, and 6m for Sentinel 1 & 2)
+- Demonstrates usage for two mission pairs:
+    - ERS-1/2 & Landsat 5 TM (1991-2011), and 
+    - Sentinel 1 & 2 (2017-now)
+- Predicts changes which happened in one time window:
+    - 1 year for ERS-1/2 & Landsat 5 TM, and
+    - 6 months for Sentinel 1 & 2
 - The long mission times allow monitoring of urban changes over larger time frames
 
 ## Usage
