@@ -31,7 +31,7 @@ The AoI shapefiles can be found in the respective subdirectories:
 
 ### Pre-Processing
 Before training, observations from EOPatches need to be processed in two steps:
-<!--![pre-processing steps](./collateral/pre-processing.png)-->
+![pre-processing steps](./collateral/pre-processing.png)
 
 1. Temporally stacking, assembling and tiling (creates temporary TFRecord files):
     - ERS-1/2 & Landsat 5 TM: [`1_tstack_assemble_tile.py`](./ERS12_LS5/preproc/)
@@ -41,7 +41,7 @@ Before training, observations from EOPatches need to be processed in two steps:
     - Sentinel 1 & 2: [`2_generate_windows_slabels.py`](./Sentinel1_2/preproc/)
 
 ### Model Architecture
-<!--![model architecture](./collateral/model_architecture.png)-->
+![model architecture](./collateral/model_architecture.png)
 
 ### Training
 Training is executed on the windowed and labeled TFRecord files:
