@@ -25,6 +25,10 @@ Dashed boxes (processing steps) are not contained here. The actors denote differ
 ### Pre-Requisites
 For either era, SAR (separated by ascending and descending orbit directions) and multispectral optical observations are needed as EOPatches, a format introduced by [eo-learn](https://github.com/sentinel-hub/eo-learn).
 
+The AoI shapefiles can be found in the respective subdirectories:
+- ERS-1/2 & Landsat 5 TM: [`Rotterdam.shp`](./ERS12_LS5/AoIs/), [`Liege.shp`](./ERS12_LS5/AoIs/), and [`Limassol.shp`](./ERS12_LS5/AoIs/) (EPSG:3035)
+- Sentinel 1 & 2: [`Rotterdam.shp`](./Sentinel1_2/AoIs/), [`Liege.shp`](./Sentinel1_2/AoIs/), and [`Limassol.shp`](./Sentinel1_2/AoIs/) (EPSG:4326)
+
 ### Pre-Processing
 Before training, observations from EOPatches need to be processed in two steps:
 <!--![pre-processing steps](./collateral/pre-processing.png)-->
