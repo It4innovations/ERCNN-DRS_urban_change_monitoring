@@ -7,7 +7,10 @@ Below is an example of ERCNN-DRS continuous urban change monitoring with Sentine
 
 The repository at hand contains only the study case of the BLENDED platform. It can be run on any arbitrary environment or within the BLENDED platform. For the former, IPFS (InterPlanetary File System) is not needed and data can be stored on any file system. The following figure shows the core of the study case with two phases: training with blue arrows and inference (i.e. prediction) with orange arrows. Green arrows denote both training and inference phases.
 
-![BLENDED platform](./collateral/blended_platform.png)
+<!--![BLENDED platform](./collateral/blended_platform.png)-->
+<p align="center">
+  <img src="./collateral/blended_platform.png" />
+</p>
 
 Dashed boxes (processing steps) are not contained here. The actors denote different roles in the BLENDED platform (model owner, data owner and result owner) which are also not relevant for the study case.
 
@@ -31,7 +34,10 @@ The AoI shapefiles can be found in the respective subdirectories:
 
 ### Pre-Processing
 Before training, observations from EOPatches need to be processed in two steps:
-![pre-processing steps](./collateral/pre-processing.png)
+<!--![pre-processing steps](./collateral/pre-processing.png)-->
+<p align="center">
+  <img src="./collateral/pre-processing.png" />
+</p>
 
 1. Temporally stacking, assembling and tiling (creates temporary TFRecord files):
     - ERS-1/2 & Landsat 5 TM: [`1_tstack_assemble_tile.py`](./ERS12_LS5/preproc/)
@@ -41,7 +47,10 @@ Before training, observations from EOPatches need to be processed in two steps:
     - Sentinel 1 & 2: [`2_generate_windows_slabels.py`](./Sentinel1_2/preproc/)
 
 ### Model Architecture
-![model architecture](./collateral/model_architecture.png)
+<!--![model architecture](./collateral/model_architecture.png)-->
+<p align="center">
+  <img src="./collateral/model_architecture.png" />
+</p>
 
 ### Training
 Training is executed on the windowed and labeled TFRecord files:
@@ -57,20 +66,32 @@ We provide pre-trained networks which can be used right away:
 ### ERS-1/2 & Landsat 5 TM
 ERS-1/2 & Landsat 5 TM example of Liège. Top row are Landsat 5 TM true color observations (left, right) with change prediction (middle). Bottom rows are corresponding very-high resolution imagery from Google Earth(tm), (c) 2021 Maxar Technologies with predictions superimposed in red.
 
-![Sentinel 1 & 2 urban changes](./collateral/ers12ls5_example.png)
+<!--![Sentinel 1 & 2 urban changes](./collateral/ers12ls5_example.png)-->
+<p align="center">
+  <img src="./collateral/ers12ls5_example.png" />
+</p>
 
  Series of predictions from above example.
 
-![Sentinel 1 & 2 urban changes time series](./collateral/ers12ls5_example_series.png)
+<!--![Sentinel 1 & 2 urban changes time series](./collateral/ers12ls5_example_series.png)-->
+<p align="center">
+  <img src="./collateral/ers12ls5_example_series.png" />
+</p>
 
 ### Sentinel 1 & 2
 Sentinel 1 & 2 example of Liège. Top row are Sentinel 2 true color observations (left, right) with change prediction (middle). Bottom rows are corresponding very-high resolution imagery from Google Earth(tm), (c) 2021 Maxar Technologies with predictions superimposed in red.
 
-![Sentinel 1 & 2 urban changes](./collateral/s12_example.png)
+<!--![Sentinel 1 & 2 urban changes](./collateral/s12_example.png)-->
+<p align="center">
+  <img src="./collateral/s12_example.png" />
+</p>
 
  Series of predictions from above example.
 
-![Sentinel 1 & 2 urban changes time series](./collateral/s12_example_series.png)
+<!--![Sentinel 1 & 2 urban changes time series](./collateral/s12_example_series.png)-->
+<p align="center">
+  <img src="./collateral/s12_example_series.png" />
+</p>
 
 # Paper and Citation
 TBD
