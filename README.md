@@ -94,7 +94,20 @@ Sentinel 1 & 2 example of Liège. Top row are Sentinel 2 true color observations
 </p>
 
 # Paper and Citation
-TBD
+The full paper can be found at [MDPI Remote Sensing](https://www.mdpi.com/2072-4292/13/15/3000).
+
+    @Article{rs13153000,
+        AUTHOR = {Zitzlsberger, Georg and Podhorányi, Michal and Svatoň, Václav and Lazecký, Milan and Martinovič, Jan},
+        TITLE = {Neural Network-Based Urban Change Monitoring with Deep-Temporal Multispectral and SAR Remote Sensing Data},
+        JOURNAL = {Remote Sensing},
+        VOLUME = {13},
+        YEAR = {2021},
+        NUMBER = {15},
+        ARTICLE-NUMBER = {3000},
+        URL = {https://www.mdpi.com/2072-4292/13/15/3000},
+        ISSN = {2072-4292},
+        DOI = {10.3390/rs13153000}
+    }
 
 # Contact
 Should you have any feedback or questions, please contact the main author: Georg Zitzlsberger (georg.zitzlsberger(a)vsb.cz).
