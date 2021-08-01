@@ -1,7 +1,3 @@
-# ERCNN-DRS Urban Change Monitoring
-This project hosts the *Ensemble of Recurrent Convolutional Neural Networks for Deep Remote Sensing* (ERCNN-DRS) used for urban change monitoring with ERS-1/2 & Landsat 5 TM, and Sentinel 1 & 2 remote sensing mission pairs. It was developed for demonstration purposes (study case) in the ESA Blockchain ENabled DEep Learning for Space Data (BLENDED)<sup>1</sup> project.
-Two neural network models were trained for the two eras (ERS-1/2 & Landsat 5 TM: 1991-2011, and Sentinel 1 & 2: 2017-2021).
-
 **Table of Contents:**
 - [ERCNN-DRS Urban Change Monitoring](#ercnn-drs-urban-change-monitoring)
   * [Features](#features)
@@ -18,6 +14,10 @@ Two neural network models were trained for the two eras (ERS-1/2 & Landsat 5 TM:
 - [Contact](#contact)
 - [Acknowledgement](#acknowledgement)
 - [License](#license)
+
+# ERCNN-DRS Urban Change Monitoring
+This project hosts the *Ensemble of Recurrent Convolutional Neural Networks for Deep Remote Sensing* (ERCNN-DRS) used for urban change monitoring with ERS-1/2 & Landsat 5 TM, and Sentinel 1 & 2 remote sensing mission pairs. It was developed for demonstration purposes (study case) in the ESA Blockchain ENabled DEep Learning for Space Data (BLENDED)<sup>1</sup> project.
+Two neural network models were trained for the two eras (ERS-1/2 & Landsat 5 TM: 1991-2011, and Sentinel 1 & 2: 2017-2021).
 
 Below is an example of ERCNN-DRS continuous urban change monitoring with Sentinel 1 & 2 data (AoI of Liège). It uses  **deep-temporal multispectral and SAR remote sensing observations** to make predictions of urban changes over a time window of half a year (right). The higher the values, the more likely an urban change was detected within that window. Left are true color observations of start of the respective window for orientation only. [external link to YouTube]
 [![ERCNN-DRS continuous urban change monitoring with Sentinel 1 & 2](https://img.youtube.com/vi/qNFu_Zl8zYI/maxresdefault.jpg)](https://www.youtube.com/watch?v=qNFu_Zl8zYI)
