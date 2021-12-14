@@ -12,7 +12,7 @@
     + [Sentinel 1 & 2](#sentinel-1--2)
 - [Paper and Citation](#paper-and-citation)
 - [Contact](#contact)
-- [Acknowledgement](#acknowledgement)
+- [Acknowledgements](#acknowledgements)
 - [License](#license)
 
 # ERCNN-DRS Urban Change Monitoring
