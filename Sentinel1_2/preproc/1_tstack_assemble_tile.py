@@ -175,9 +175,7 @@ def worker_proc(queue, writer_queue):
         (order,
          ts,
          prev_frame_S1_ascending,
-         prev2_frame_S1_ascending,
          prev_frame_S1_descending,
-         prev2_frame_S1_descending,
          prev_frame_S2,
          new_s1_asc,
          new_s1_dsc,
@@ -299,7 +297,7 @@ def process_site(site):
         min_height_S1, min_width_S1 = get_min_resolution(site)
 
     # Just for testing (smaller subset)
-    min_height_S2=min_width_S2=min_height_S1=min_width_S1 = 200
+    #min_height_S2=min_width_S2=min_height_S1=min_width_S1 = 200
 
     print("\tResolutions:")
     print("\t\tS2: {}, {}".format(min_height_S2, min_width_S2))
@@ -355,12 +353,6 @@ def process_site(site):
     prev_frame_S1_descending = np.zeros((min_height_S1,
                                          min_width_S1,
                                          2), dtype=np.float32)
-    prev2_frame_S1_ascending = np.zeros((min_height_S1,
-                                         min_width_S1,
-                                         2), dtype=np.float32)
-    prev2_frame_S1_descending = np.zeros((min_height_S1,
-                                          min_width_S1,
-                                          2), dtype=np.float32)
 
     num_tiles_y = min_height_S1//tile_size_y
     num_tiles_x = min_width_S1//tile_size_x
@@ -445,9 +437,7 @@ def process_site(site):
         workerqueue.put((idx,
                          item[0],
                          prev_frame_S1_ascending,
-                         prev2_frame_S1_ascending,
                          prev_frame_S1_descending,
-                         prev2_frame_S1_descending,
                          prev_frame_S2,
                          new_s1_asc,
                          new_s1_dsc,
@@ -456,8 +446,6 @@ def process_site(site):
                          min_width_S1,
                          min_height_S2,
                          min_width_S2))
-        prev2_frame_S1_ascending = prev_frame_S1_ascending
-        prev2_frame_S1_descending = prev_frame_S1_descending
         idx += 1
         new_s1_asc = True
         new_s1_dsc = True

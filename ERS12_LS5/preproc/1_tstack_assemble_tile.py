@@ -175,9 +175,7 @@ def worker_proc(queue, writer_queue):
         (order,
          ts,
          prev_frame_ERS12_ascending,
-         prev2_frame_ERS12_ascending,
          prev_frame_ERS12_descending,
-         prev2_frame_ERS12_descending,
          prev_frame_LS5,
          new_ers12_asc,
          new_ers12_dsc,
@@ -301,7 +299,7 @@ def process_site(site):
         min_height_ERS12, min_width_ERS12 = get_min_resolution(site)
 
     # Just for testing (smaller subset)
-    min_height_LS5=min_width_LS5=min_height_ERS12=min_width_ERS12 = 200
+    #min_height_LS5=min_width_LS5=min_height_ERS12=min_width_ERS12 = 200
 
     print("\tResolutions:")
     print("\t\tLS5: {}, {}".format(min_height_LS5, min_width_LS5))
@@ -357,12 +355,6 @@ def process_site(site):
     prev_frame_ERS12_descending = np.zeros((min_height_ERS12,
                                             min_width_ERS12,
                                             1), dtype=np.float32)
-    prev2_frame_ERS12_ascending = np.zeros((min_height_ERS12,
-                                            min_width_ERS12,
-                                            1), dtype=np.float32)
-    prev2_frame_ERS12_descending = np.zeros((min_height_ERS12,
-                                             min_width_ERS12,
-                                             1), dtype=np.float32)
 
     num_tiles_y = min_height_ERS12//tile_size_y
     num_tiles_x = min_width_ERS12//tile_size_x
@@ -453,9 +445,7 @@ def process_site(site):
         workerqueue.put((idx,
                          item[0],
                          prev_frame_ERS12_ascending,
-                         prev2_frame_ERS12_ascending,
                          prev_frame_ERS12_descending,
-                         prev2_frame_ERS12_descending,
                          prev_frame_LS5,
                          new_ers12_asc,
                          new_ers12_dsc,
@@ -464,8 +454,6 @@ def process_site(site):
                          min_width_ERS12,
                          min_height_LS5,
                          min_width_LS5))
-        prev2_frame_ERS12_ascending = prev_frame_ERS12_ascending
-        prev2_frame_ERS12_descending = prev_frame_ERS12_descending
         idx += 1
         new_ers12_asc = True
         new_ers12_dsc = True
