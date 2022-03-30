@@ -465,8 +465,6 @@ def process_site(site):
                                                  None,
                                                  None,
                                                  None,
-                                                 None,
-                                                 None,
                                                  None))
     while any(wproc.is_alive() for wproc in workerprocesses):
             time.sleep(1)
