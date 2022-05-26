@@ -126,6 +126,10 @@ The full paper can be found at [MDPI Remote Sensing](https://www.mdpi.com/2072-4
         DOI = {10.3390/rs13153000}
     }
 
+# Posters
+  - [`Supercomputing 2021, St. Louis/USA`](./posters/SC21.pdf)
+  - [`Living Planet Symposium 2022, Bonn/Germany`](./posters/LPS22.pdf)
+
 # Contact
 Should you have any feedback or questions, please contact the main author: Georg Zitzlsberger (georg.zitzlsberger(a)vsb.cz).
 
