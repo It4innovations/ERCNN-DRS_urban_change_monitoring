@@ -10,6 +10,7 @@
   * [Examples](#examples)
     + [ERS-1/2 & Landsat 5 TM](#ers-12--landsat-5-tm)
     + [Sentinel 1 & 2](#sentinel-1--2)
+- [Training/Validation Data](#trainingvalidation-data)
 - [Paper and Citation](#paper-and-citation)
 - [Posters](#posters)
 - [Contact](#contact)
@@ -111,6 +112,25 @@ Sentinel 1 & 2 example of Liège. Top row are Sentinel 2 true color observations
   <img src="./collateral/s12_example_series.png" />
 </p>
 
+# Training/Validation Data
+Thanks to the data providers, we can make available the [training/validation data](https://drive.google.com/drive/folders/1-upqDJBklUuiuUPmscP-BUKOe2fhHI1_) on Google Drive. They are separated by era/mission generation and pre-processing steps, see list below.
+In most cases you might be interested in the training sets only, use "Windowing and labeling" then.
+
+**ATTENTION, these files are large: 25-250GB**
+
+- Landsat 5 TM and ERS-1/2:
+  - Temporally stacking, assembling and tiling:
+    - [Rotterdam & Limassol](https://drive.google.com/file/d/1V8ZxXj7HtkAQ9NohXT3LZF8gV1H_LVZ4/view?usp=sharing)
+    - [Liège](https://drive.google.com/file/d/1xiY0Wpu2ILYV-Z3939J2E5qtXXeHOtTH/view?usp=sharing)
+  - Windowing and labeling (ready for training):
+    - [Rotterdam & Limassol](https://drive.google.com/file/d/1-VTgGnc_7ZMqsecAhTVnnTi4NGeUEmH7/view?usp=sharing)
+- Sentinel 1 & 2:
+  - Temporally stacking, assembling and tiling:
+    - [Rotterdam & Limassol](https://drive.google.com/file/d/1UCipZ5ycbcNjb9Nt6IqpgVxR2rm8ltsk/view?usp=sharing)
+    - [Liège](https://drive.google.com/file/d/1AP8HmaaGoy8aYPKxbeUnKczw7cxTxzKb/view?usp=sharing)
+  - Windowing and labeling (ready for training):
+    - [Rotterdam & Limassol](https://drive.google.com/file/d/1m_yoAvV_EJ_jVThee_Djn2DpbgmRX-Kk/view?usp=sharing)
+
 # Paper and Citation
 The full paper can be found at [MDPI Remote Sensing](https://www.mdpi.com/2072-4292/13/15/3000).
 
@@ -137,7 +157,12 @@ Should you have any feedback or questions, please contact the main author: Georg
 # Acknowledgements
 This research was funded by ESA via the Blockchain ENabled DEep Learning for Space Data (BLENDED) project (SpaceApps Subcontract No. 4000129481/19/I-IT4I) and by the Ministry of Education, Youth and Sports from the National Programme of Sustainability (NPS II) project “IT4Innovations excellence in science - LQ1602” and by the IT4Innovations Infrastructure, which is supported by the Ministry of Education, Youth and Sports of the Czech Republic through the e-INFRA CZ (ID:90140) via the Open Access Grant Competition (OPEN-21-31).
 
-The authors would like to thank ESA for funding the study as part of the BLENDED project<sup>1</sup> and IT4Innovations for funding the compute resources via the Open Access Grant Competition (OPEN-21-31). Furthermore, the authors would like to thank the data providers (USGS, ESA, Sentinel Hub and Google) for making remote sensing data freely available. The authors would finally like to thank the BLENDED project partners for supporting our work as a case study of the developed platform.
+The authors would like to thank ESA for funding the study as part of the BLENDED project<sup>1</sup> and IT4Innovations for funding the compute resources via the Open Access Grant Competition (OPEN-21-31). Furthermore, the authors would like to thank the data providers (USGS, ESA, Sentinel Hub and Google) for making remote sensing data freely available:
+- Landsat 5 TM courtesy of the U.S. Geological Survey.
+- ERS-1/2 data provided by the European Space Agency.
+- Contains modified Copernicus Sentinel data 2017-2021 processed by Sentinel Hub (Sentinel 1 & 2).
+
+The authors would finally like to thank the BLENDED project partners for supporting our work as a case study of the developed platform.
 
 <sup>1</sup> [Valentin, B.; Gale, L.; Boulahya, H.; Charalampopoulou, B.; Christos K., C.; Poursanidis, D.; Chrysoulakis, N.; Svato&#x0148;, V.; Zitzlsberger, G.; Podhoranyi, M.; Kol&#x00E1;&#x0159;, D.; Vesel&#x00FD;, V.; Lichtner, O.; Koutensk&#x00FD;, M.; Reg&#x00E9;ciov&#x00E1;, D.; M&#x00FA;&#x010D;ka, M. BLENDED - USING BLOCKCHAIN AND DEEP LEARNING FOR SPACE DATA PROCESSING. Proceedings of the 2021 conference on Big Data from Space; Soille, P.; Loekken, S.; Albani, S., Eds. Publications Office of the European Union, 2021, JRC125131, pp. 97-100.  doi:10.2760/125905.](https://op.europa.eu/en/publication-detail/-/publication/ac7c57e5-b787-11eb-8aca-01aa75ed71a1)
 
