@@ -118,17 +118,18 @@ In most cases you might be interested in the training sets only, use "Windowing 
 
 **ATTENTION, these files are large: 25-250GB**
 
-- Landsat 5 TM and ERS-1/2:
-  - Temporally stacking, assembling and tiling:
+**Landsat 5 TM and ERS-1/2 pre-processing steps:**
+1. Temporally stacking, assembling and tiling:
     - [Rotterdam & Limassol](https://drive.google.com/file/d/1V8ZxXj7HtkAQ9NohXT3LZF8gV1H_LVZ4/view?usp=sharing)
     - [Liège](https://drive.google.com/file/d/1xiY0Wpu2ILYV-Z3939J2E5qtXXeHOtTH/view?usp=sharing)
-  - Windowing and labeling (ready for training):
+2. Windowing and labeling (ready for training):
     - [Rotterdam & Limassol](https://drive.google.com/file/d/1-VTgGnc_7ZMqsecAhTVnnTi4NGeUEmH7/view?usp=sharing)
-- Sentinel 1 & 2:
-  - Temporally stacking, assembling and tiling:
+    
+**Sentinel 1 & 2 pre-processing steps:**
+1. Temporally stacking, assembling and tiling:
     - [Rotterdam & Limassol](https://drive.google.com/file/d/1UCipZ5ycbcNjb9Nt6IqpgVxR2rm8ltsk/view?usp=sharing)
     - [Liège](https://drive.google.com/file/d/1AP8HmaaGoy8aYPKxbeUnKczw7cxTxzKb/view?usp=sharing)
-  - Windowing and labeling (ready for training):
+2. Windowing and labeling (ready for training):
     - [Rotterdam & Limassol](https://drive.google.com/file/d/1m_yoAvV_EJ_jVThee_Djn2DpbgmRX-Kk/view?usp=sharing)
 
 # Paper and Citation
