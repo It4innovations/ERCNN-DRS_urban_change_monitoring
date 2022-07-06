@@ -65,6 +65,8 @@ Before training, observations from EOPatches need to be processed in two steps:
     - ERS-1/2 & Landsat 5 TM: [`2_generate_windows_slabels.py`](./ERS12_LS5/preproc/)
     - Sentinel 1 & 2: [`2_generate_windows_slabels.py`](./Sentinel1_2/preproc/)
 
+Pre-processed data (steps 1 and 2) as used in our work can be found in section [Training/Validation Data](#trainingvalidation-data) below.
+
 ### Model Architecture
 <!--![model architecture](./collateral/model_architecture.png)-->
 <p align="center">
