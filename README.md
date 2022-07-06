@@ -116,27 +116,27 @@ Sentinel 1 & 2 example of Liège. Top row are Sentinel 2 true color observations
 </p>
 
 # Training/Validation Data
-Thanks to the data providers, we can make available the [training/validation data](https://drive.google.com/drive/folders/1-upqDJBklUuiuUPmscP-BUKOe2fhHI1_) on Google Drive. They are separated by era/mission generation and pre-processing steps, see list below.
+Thanks to the data providers, we can make available the [`training/validation data`](https://drive.google.com/drive/folders/1-upqDJBklUuiuUPmscP-BUKOe2fhHI1_) on Google Drive. They are separated by era/mission generation and pre-processing steps, see list below.
 In most cases you might be interested in the training sets only, use "Windowing and labeling" then.
 
 **ATTENTION, these files are large: 25-250 GB**
 
 **Landsat 5 TM and ERS-1/2 pre-processing steps:**
 1. Temporally stacking, assembling and tiling:
-    - [Rotterdam & Limassol](https://drive.google.com/file/d/1V8ZxXj7HtkAQ9NohXT3LZF8gV1H_LVZ4/view?usp=sharing) [38 GB]
-    - [Liège](https://drive.google.com/file/d/1xiY0Wpu2ILYV-Z3939J2E5qtXXeHOtTH/view?usp=sharing) [25 GB]
+    - [`Rotterdam & Limassol`](https://drive.google.com/file/d/1V8ZxXj7HtkAQ9NohXT3LZF8gV1H_LVZ4/view?usp=sharing) [38 GB]
+    - [`Liège`](https://drive.google.com/file/d/1xiY0Wpu2ILYV-Z3939J2E5qtXXeHOtTH/view?usp=sharing) [25 GB]
 2. Windowing and labeling (ready for training):
-    - [Rotterdam & Limassol](https://drive.google.com/file/d/1-VTgGnc_7ZMqsecAhTVnnTi4NGeUEmH7/view?usp=sharing) [65 GB]
+    - [`Rotterdam & Limassol`](https://drive.google.com/file/d/1-VTgGnc_7ZMqsecAhTVnnTi4NGeUEmH7/view?usp=sharing) [65 GB]
     
 **Sentinel 1 & 2 pre-processing steps:**
 1. Temporally stacking, assembling and tiling:
-    - [Rotterdam & Limassol](https://drive.google.com/file/d/1UCipZ5ycbcNjb9Nt6IqpgVxR2rm8ltsk/view?usp=sharing) [134 GB]
-    - [Liège](https://drive.google.com/file/d/1AP8HmaaGoy8aYPKxbeUnKczw7cxTxzKb/view?usp=sharing) [66 GB]
+    - [`Rotterdam & Limassol`](https://drive.google.com/file/d/1UCipZ5ycbcNjb9Nt6IqpgVxR2rm8ltsk/view?usp=sharing) [134 GB]
+    - [`Liège`](https://drive.google.com/file/d/1AP8HmaaGoy8aYPKxbeUnKczw7cxTxzKb/view?usp=sharing) [66 GB]
 2. Windowing and labeling (ready for training):
-    - [Rotterdam & Limassol](https://drive.google.com/file/d/1m_yoAvV_EJ_jVThee_Djn2DpbgmRX-Kk/view?usp=sharing) [211 GB]
+    - [`Rotterdam & Limassol`](https://drive.google.com/file/d/1m_yoAvV_EJ_jVThee_Djn2DpbgmRX-Kk/view?usp=sharing) [211 GB]
 
 # Transfer Learning
-We have demonstrated how to improve the prediction performance with a novel low-effort supervised transfer learning method. This method, results and collaterals can be found in the subdirectory [./transfer](./transfer/README.md).
+We have demonstrated how to improve the prediction performance with a novel low-effort supervised transfer learning method. This method, results and collaterals can be found in the subdirectory [`transfer`](./transfer/README.md).
 
 # Paper and Citation
 The full paper can be found at [MDPI Remote Sensing](https://www.mdpi.com/2072-4292/13/15/3000).
