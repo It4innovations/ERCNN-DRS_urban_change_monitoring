@@ -11,6 +11,7 @@
     + [ERS-1/2 & Landsat 5 TM](#ers-12--landsat-5-tm)
     + [Sentinel 1 & 2](#sentinel-1--2)
 - [Training/Validation Data](#trainingvalidation-data)
+- [Transfer Learning](#transfer-learning)
 - [Paper and Citation](#paper-and-citation)
 - [Posters](#posters)
 - [Contact](#contact)
@@ -133,6 +134,9 @@ In most cases you might be interested in the training sets only, use "Windowing 
     - [Liège](https://drive.google.com/file/d/1AP8HmaaGoy8aYPKxbeUnKczw7cxTxzKb/view?usp=sharing) [66 GB]
 2. Windowing and labeling (ready for training):
     - [Rotterdam & Limassol](https://drive.google.com/file/d/1m_yoAvV_EJ_jVThee_Djn2DpbgmRX-Kk/view?usp=sharing) [211 GB]
+
+# Transfer Learning
+We have demonstrated how to improve the prediction performance with a novel low-effort supervised transfer learning method. This method, results and collaterals can be found in the subdirectory [./transfer](./transfer/README.md).
 
 # Paper and Citation
 The full paper can be found at [MDPI Remote Sensing](https://www.mdpi.com/2072-4292/13/15/3000).
