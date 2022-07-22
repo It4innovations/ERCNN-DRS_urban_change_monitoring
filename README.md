@@ -136,7 +136,7 @@ In most cases you might be interested in the training sets only, use "Windowing 
     - [`Rotterdam & Limassol`](https://drive.google.com/file/d/1m_yoAvV_EJ_jVThee_Djn2DpbgmRX-Kk/view?usp=sharing) [211 GB]
 
 # Transfer Learning
-We have demonstrated how to improve the prediction performance with a novel low-effort supervised transfer learning method. This method, results and collaterals can be found in the subdirectory [`transfer`](./transfer/README.md).
+We have demonstrated how to improve the prediction performance with a novel low-effort supervised transfer learning method. This method, results and collaterals can be found in the subdirectory [`transfer`](./transfer/).
 
 # Paper and Citation
 The full paper can be found at [MDPI Remote Sensing](https://www.mdpi.com/2072-4292/13/15/3000).
