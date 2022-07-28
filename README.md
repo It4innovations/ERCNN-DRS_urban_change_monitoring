@@ -116,7 +116,7 @@ Sentinel 1 & 2 example of Liège. Top row are Sentinel 2 true color observations
 </p>
 
 # Training/Validation Data
-Thanks to the data providers, we can make available the [`training/validation data`](https://drive.google.com/drive/folders/1-upqDJBklUuiuUPmscP-BUKOe2fhHI1_) on Google Drive. They are separated by era/mission generation and pre-processing steps, see list below.
+Thanks to the data providers, we can make available the [`training/validation dataset`](https://drive.google.com/drive/folders/1-upqDJBklUuiuUPmscP-BUKOe2fhHI1_) on Google Drive. They are separated by era/mission generation and pre-processing steps, see list below.
 In most cases you might be interested in the training sets only, use "Windowing and labeling" then.
 
 **ATTENTION, these files are large: 25-250 GB**
