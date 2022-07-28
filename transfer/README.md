@@ -1,7 +1,7 @@
 # Transfer Learning with ERCNN-DRS
 TBD
 
-# Training/Validation Data
+# Training/Validation Dataset
 Thanks to the data providers, we can make available the [`training/validation dataset`](https://drive.google.com/drive/folders/1CLTna5fNLTEEWwELK6hXoN5C42yaXvQf?usp=sharing) on Google Drive.
 
 **Note:** The tiles don't contain the ground truth but synthetic labels which are not used for transfer learning! The ground truth needs to be loaded separately (see folder [`numpy_ground_truth`](./numpy_ground_truth/)).
