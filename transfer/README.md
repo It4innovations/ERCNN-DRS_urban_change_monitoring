@@ -4,7 +4,7 @@ TBD
 # Training/Validation Data
 Thanks to the data providers, we can make available the [`training/validation dataset`](https://drive.google.com/drive/folders/1CLTna5fNLTEEWwELK6hXoN5C42yaXvQf?usp=sharing) on Google Drive.
 
-**Note:** The tiles don't contain the ground truth but synthetic labels which are not used for transfer learning! The ground truth needs to be loaded separately (see folder [`ground_truth`](./ground_truth/)).
+**Note:** The tiles don't contain the ground truth but synthetic labels which are not used for transfer learning! The ground truth needs to be loaded separately (see folder [`numpy_ground_truth`](./numpy_ground_truth/)).
 
 **ATTENTION, these files are large: 124-140 GB**
    
