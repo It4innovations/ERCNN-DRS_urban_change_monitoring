@@ -15,7 +15,7 @@
 - [Paper and Citation](#paper-and-citation)
 - [Posters](#posters)
 - [Contact](#contact)
-- [Acknowledgements](#acknowledgements)
+- [Acknowledgments](#acknowledgments)
 - [License](#license)
 
 # ERCNN-DRS Urban Change Monitoring
