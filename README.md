@@ -10,7 +10,7 @@
   * [Examples](#examples)
     + [ERS-1/2 & Landsat 5 TM](#ers-12--landsat-5-tm)
     + [Sentinel 1 & 2](#sentinel-1--2)
-- [Training/Validation Data](#trainingvalidation-data)
+- [Training/Validation Datasets](#trainingvalidation-datasets)
 - [Transfer Learning](#transfer-learning)
 - [Paper and Citation](#paper-and-citation)
 - [Posters](#posters)
@@ -115,8 +115,8 @@ Sentinel 1 & 2 example of Liège. Top row are Sentinel 2 true color observations
   <img src="./collateral/s12_example_series.png" />
 </p>
 
-# Training/Validation Data
-Thanks to the data providers, we can make available the [`training/validation dataset`](https://drive.google.com/drive/folders/1-upqDJBklUuiuUPmscP-BUKOe2fhHI1_) on Google Drive. They are separated by era/mission generation and pre-processing steps, see list below.
+# Training/Validation Datasets
+Thanks to the data providers, we can make available the [`training/validation datasets`](https://drive.google.com/drive/folders/1-upqDJBklUuiuUPmscP-BUKOe2fhHI1_) on Google Drive. They are separated by era/mission generation and pre-processing steps, see list below.
 In most cases you might be interested in the training sets only, use "Windowing and labeling" then.
 
 **ATTENTION, these files are large: 25-250 GB**
