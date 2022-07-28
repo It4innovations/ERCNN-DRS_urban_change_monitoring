@@ -12,6 +12,12 @@ Thanks to the data providers, we can make available the [`training/validation da
 - [baseline](https://drive.google.com/file/d/1h5aZCnXoAgZU8ZqiZVwB8Q99iR0LwWLw/view?usp=sharing) [124 GB]
 - [extended](https://drive.google.com/file/d/1JzSpCUmPpAKYP5P2RS3ZYsVN8sgQY107/view?usp=sharing) [140 GB]
 
+# Trained Models
+We provide three [`models`](./models/):
+  - [`epoch_0.hdf5`](./models/epoch_0.hdf5): Original, pre-trained model.
+  - [`baseline.hdf5`](./models/baseline.hdf5): Transferred model with baseline dataset.
+  - [`extended.hdf5`](./models/extended.hdf5): Transferred model with extended dataset.
+
 # Paper and Citation
 TBD
 
