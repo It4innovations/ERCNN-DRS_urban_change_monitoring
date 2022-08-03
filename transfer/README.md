@@ -36,6 +36,7 @@ Should you have any feedback or questions, please contact the main author: Georg
 # Acknowledgments
 This research was funded by the IT4Innovations infrastructure which is supported from the Ministry of Education, Youth and Sports of the Czech Republic through the e-INFRA CZ (ID:90140) via Open Access Grant Competition (OPEN-21-31). The authors would like to thank the data providers (Sentinel Hub and Google) for making the used remote sensing data freely available:
 - Contains modified Copernicus Sentinel data 2017-2021 processed by Sentinel Hub (Sentinel 1 & 2).
+
 The use of the images in the [`ground_truth`](./ground_truth/) subdirectory, stemming from Google Earth(TM), must respect the [`Google Earth terms of use`](https://about.google/brand-resource-center/products-and-services/geo-guidelines/). 
 
 # License
