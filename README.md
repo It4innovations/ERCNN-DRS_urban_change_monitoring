@@ -14,6 +14,7 @@
 - [Transfer Learning](#transfer-learning)
 - [Paper and Citation](#paper-and-citation)
 - [Posters](#posters)
+- [Other](#other)
 - [Contact](#contact)
 - [Acknowledgments](#acknowledgments)
 - [License](#license)
@@ -157,6 +158,9 @@ The full paper can be found at [MDPI Remote Sensing](https://www.mdpi.com/2072-4
 # Posters
   - [`Supercomputing 2021, St. Louis/USA`](./posters/SC21.pdf)
   - [`Living Planet Symposium 2022, Bonn/Germany`](./posters/LPS22.pdf)
+
+# Other
+In case you require Landsat 5 TM Top of Atmosphere (TOA) Correction, we have "extended" an existing project to support it: [rio-toa_ls5](https://github.com/It4innovations/rio-toa_ls5).
 
 # Contact
 Should you have any feedback or questions, please contact the main author: Georg Zitzlsberger (georg.zitzlsberger(a)vsb.cz).
