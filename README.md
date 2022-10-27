@@ -156,7 +156,7 @@ The full paper can be found at [MDPI Remote Sensing](https://www.mdpi.com/2072-4
     }
 
 # Posters
-  - [`Supercomputing 2021, St. Louis/USA`](./posters/SC21.pdf)
+  - [`Supercomputing 2021, St. Louis/USA`](https://sc21.supercomputing.org/proceedings/tech_poster/tech_poster_pages/rpost101.html) or [copy](./posters/SC21.pdf) in current repository
   - [`Living Planet Symposium 2022, Bonn/Germany`](./posters/LPS22.pdf)
 
 # Other
