@@ -1,6 +1,7 @@
 **Table of Contents:**
 - [Transfer Learning with ERCNN-DRS](#transfer-learning-with-ercnn-drs)
 - [Training/Validation Datasets](#trainingvalidation-datasets)
+- [Training](#training)
 - [Trained Models](#trained-models)
 - [Paper and Citation](#paper-and-citation)
 - [Contact](#contact)
@@ -10,14 +11,14 @@
 # Transfer Learning with ERCNN-DRS
 The trained baseline of the ERCNN-DRS model ([`baseline.hdf5`](./models/baseline.hdf5)) leveraged synthetic labels to provide a temporal resolution needed to train with each observational window (6 months for Sentinel 1 & 2). When transferring and fine tuning the pre-trained model to a new location, sufficient data might not be available or is hard to come by to label each window (sample) properly.
 
-In the underlying subsequent work, we introduce a novel approach to aggregate multiple observational windows, to simplify manual labelling. We demonstrate this for the AoI Liège (Belgium) with using only a small number of tiles (set of samples) and approximated labels, based on publicly available data from Google Earth historic imagery. The aggregation spans the years 2017-2020 by training with all windows within that period at once. The selected tiles with their labels (GeoTIFFs), shape files, and a pair of very high resolution imagery from Google Earth can be found in the directory [`ground_truth`](../ground_truth/).
+In the underlying subsequent work, we introduce a novel approach to aggregate multiple observational windows, to simplify manual labelling. We demonstrate this for the AoI Liège (Belgium) with using only a small number of tiles (set of samples) and approximated labels, based on publicly available data from Google Earth historic imagery. The aggregation spans the years 2017-2020 by training with all windows within that period at once. The selected tiles with their labels (GeoTIFFs), shape files, and a pair of very high resolution imagery from Google Earth can be found in the directory [`ground_truth`](./ground_truth/).
 
 As a result, the automatically pre-trained baseline enables a per-window analysis of urban changes, whereas the subsequent transfer tailors the pre-trained network towards a specific AoI with minimal manual efforts while retaining the properties of window based analysis.
 
 # Training/Validation Datasets
 Thanks to the data providers, we can make available the [`training/validation datasets`](https://drive.google.com/drive/folders/1CLTna5fNLTEEWwELK6hXoN5C42yaXvQf?usp=sharing) on Google Drive.
 
-**Note:** The training/validation datasets are `TFRecord` files, with one file for each tile and each tile containing all windows from 2017-2020. Two features are availble, with one describing the time series of observations for each window and a label. The label is the synthetic ground truth which is not used for transfer learning! Instead labels need to be loaded separately from folder [`numpy_ground_truth`](./numpy_ground_truth/).
+**Note:** The training/validation datasets are `TFRecord` files, with one file for each tile and each tile containing all windows from 2017-2020. Two features are availble, with one describing the time series of observations for each window and a label. The label is the synthetic ground truth which is not used for transfer learning! Instead labels need to be loaded separately from folder [`training/numpy_ground_truth`](./training/numpy_ground_truth/).
 
 **ATTENTION, these files are large!**
 - [V1](https://drive.google.com/file/d/1u_bX6VntdRMoQT8VdQ3YrhCaHtBz6Ndt/view?usp=share_link) [147.34 GB]
