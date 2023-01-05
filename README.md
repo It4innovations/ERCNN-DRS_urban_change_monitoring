@@ -54,20 +54,29 @@ The AoI shapefiles can be found in the respective subdirectories:
 - Sentinel 1 & 2: [`Rotterdam.shp`](./Sentinel1_2/AoIs/), [`Liege.shp`](./Sentinel1_2/AoIs/), and [`Limassol.shp`](./Sentinel1_2/AoIs/) (EPSG:4326)
 
 ### Pre-Processing
-Before training, observations from EOPatches need to be processed in two steps:
+
 <!--![pre-processing steps](./collateral/pre-processing.png)-->
 <p align="center">
   <img src="./collateral/pre-processing.png" />
 </p>
 
-1. Temporally stacking, assembling and tiling (creates temporary TFRecord files):
-    - ERS-1/2 & Landsat 5 TM: [`1_tstack_assemble_tile.py`](./ERS12_LS5/preproc/)
-    - Sentinel 1 & 2: [`1_tstack_assemble_tile.py`](./Sentinel1_2/preproc/)
-2. Windowing and labeling (output: TFRecord files):
-    - ERS-1/2 & Landsat 5 TM: [`2_generate_windows_slabels.py`](./ERS12_LS5/preproc/)
-    - Sentinel 1 & 2: [`2_generate_windows_slabels.py`](./Sentinel1_2/preproc/)
+Before training, observations from EOPatches need to be processed in two steps:
+1. Temporally stacking, assembling and tiling (creates temporary TFRecord files)
+2. Windowing and labeling (output: TFRecord files)
+
+This is realized with the dedicated solution called [`rsdtlib`](https://github.com/It4innovations/rsdtlib). It also includes the download of Sentinel 1 & 2 observations from Sentinel-Hub to provide a turnkey solution. See esp. the [ERCNN-DRS related scripts](https://github.com/It4innovations/rsdtlib/tree/main/ERCNN-DRS) for instructions on how to pre-process.
 
 Pre-processed data (steps 1 and 2) as used in our work can be found in section [Training/Validation Data](#trainingvalidation-data) below.
+
+**Deprecation Note:**  
+The earlier pre-processing scripts are superseded by [`rsdtlib`](https://github.com/It4innovations/rsdtlib). For historic reasons, the scripts can be found here to implement the two steps:
+
+1. ~~Temporally stacking, assembling and tiling (creates temporary TFRecord files):~~
+    - ~~ERS-1/2 & Landsat 5 TM: [`1_tstack_assemble_tile.py`](./ERS12_LS5/preproc/)~~
+    - ~~Sentinel 1 & 2: [`1_tstack_assemble_tile.py`](./Sentinel1_2/preproc/)~~
+2. ~~Windowing and labeling (output: TFRecord files):~~
+    - ~~ERS-1/2 & Landsat 5 TM: [`2_generate_windows_slabels.py`](./ERS12_LS5/preproc/)~~
+    - ~~Sentinel 1 & 2: [`2_generate_windows_slabels.py`](./Sentinel1_2/preproc/)~~
 
 ### Model Architecture
 <!--![model architecture](./collateral/model_architecture.png)-->
