@@ -1,6 +1,6 @@
 #
 # Author: Georg Zitzlsberger (georg.zitzlsberger<ad>vsb.cz)
-# Copyright (C) 2020-2021 Georg Zitzlsberger, IT4Innovations,
+# Copyright (C) 2020-2023 Georg Zitzlsberger, IT4Innovations,
 #                         VSB-Technical University of Ostrava, Czech Republic
 #
 # This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,11 @@ class Synthetic_Label():
 
         chmap = np.zeros((window.shape[1], window.shape[2]), dtype=np.int64)
 
-        omni = OMNIBUS(window.shape[1], window.shape[2], 4, sigma, window[0,:,:,0], None)
+        omni = OMNIBUS(window.shape[1],
+                       window.shape[2],
+                       4,
+                       sigma,
+                       window[0,:,:,0], None)
 
         for idx in range(1, len(window)):
             chmap_tmp = omni.PV(window[idx, :, :, 0], window[idx, :, :, 1])
@@ -46,7 +50,9 @@ class Synthetic_Label():
         mndwi = np.nan_to_num(es.normalized_diff(green, mir), nan = 0.0)
         mir_ratio = np.nan_to_num(mir/mir2, nan = 0.0)
 
-        return [np.float32(np.mean(blue)), np.float32(np.mean(mir_ratio)), np.float32(np.mean(mndwi**2))]
+        return [np.float32(np.mean(blue)),
+                np.float32(np.mean(mir_ratio)),
+                np.float32(np.mean(mndwi**2))]
 
     @staticmethod
     def ENDISI_S2(window, beta, A):
@@ -62,7 +68,10 @@ class Synthetic_Label():
 
         mndwi = np.nan_to_num(es.normalized_diff(green, mir), nan = 0.0)
         mir_ratio = np.nan_to_num(mir/mir2, nan = 0.0)
-        res = np.nan_to_num(es.normalized_diff(blue, beta * (mir_ratio + mndwi**2)), nan = 0.0)
+        res = np.nan_to_num(
+                es.normalized_diff(blue,
+                                   beta * (mir_ratio + mndwi**2)),
+                nan = 0.0)
         res = np.where(res + A> 0.0, res + A, 0.0)
 
         mndbi = np.nan_to_num(es.normalized_diff(mir, blue), nan = 0.0)
@@ -74,32 +83,48 @@ class Synthetic_Label():
         return res
 
     @staticmethod
-    def compute_label_S2_S1_ENDISI(s1_ascending, s1_descending, s2, s2_before, s2_after, shift, beta1, beta3):
+    def compute_label_S2_S1_ENDISI(s1_ascending,
+                                   s1_descending,
+                                   s2,
+                                   s2_before,
+                                   s2_after,
+                                   shift,
+                                   beta1,
+                                   beta3):
         import math
         import numpy as np
 
-        assert ((s1_ascending.shape[1] == s1_descending.shape[1] == s2.shape[1]) and \
-               (s1_ascending.shape[2] == s1_descending.shape[2] == s2.shape[2])) ,     \
-               "Tiles of the sources have different sizes ({}, {}, {}/{}, {}, {})".format( \
-                   s1_ascending.shape[1], s1_descending.shape[1], s2.shape[1],      \
+        assert ((s1_ascending.shape[1] ==                                      \
+                    s1_descending.shape[1] == s2.shape[1]) and                 \
+               (s1_ascending.shape[2] ==                                       \
+                    s1_descending.shape[2] == s2.shape[2])) ,                  \
+               "Tiles of the sources have different sizes "                    \
+               "({}, {}, {}/{}, {}, {})".format(                               \
+                   s1_ascending.shape[1], s1_descending.shape[1], s2.shape[1], \
                    s1_ascending.shape[2], s1_descending.shape[2], s2.shape[2])
 
         s2_before_avg = np.mean(s2_before, axis=0)
-        s2_before_ebbi = Synthetic_Label.ENDISI_S2(s2_before_avg, beta1, shift)
+        s2_before_endisi = Synthetic_Label.ENDISI_S2(s2_before_avg, beta1, shift)
 
         s2_after_avg = np.mean(s2_after, axis=0)
-        s2_after_ebbi = Synthetic_Label.ENDISI_S2(s2_after_avg, beta3, shift)
+        s2_after_endisi = Synthetic_Label.ENDISI_S2(s2_after_avg, beta3, shift)
 
-        s2_diff = np.abs(s2_after_ebbi - s2_before_ebbi)
+        s2_diff = np.abs(s2_after_endisi - s2_before_endisi)
 
-        chmap_asc = Synthetic_Label.omnibus_chmap_dual(s1_ascending, s1_ascending.shape[0], 0.001)
-        chmap_dsc = Synthetic_Label.omnibus_chmap_dual(s1_descending, s1_descending.shape[0], 0.001)
+        chmap_asc = Synthetic_Label.omnibus_chmap_dual(
+                                    s1_ascending,
+                                    s1_ascending.shape[0],
+                                    0.001)
+        chmap_dsc = Synthetic_Label.omnibus_chmap_dual(
+                                    s1_descending,
+                                    s1_descending.shape[0],
+                                    0.001)
 
         chmap = (chmap_asc+chmap_dsc)/2
         return np.float32(np.clip(chmap * s2_diff * 10, 0.0, 1.0))
 
     @staticmethod
-    def compute_label_S2_S1_ENDISI_beta_coeefs(s2_before, s2_after):
+    def compute_label_S2_S1_ENDISI_beta_coeffs(s2_before, s2_after):
         import math
         import numpy as np
 

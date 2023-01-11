@@ -1,6 +1,6 @@
 #
 # Author: Georg Zitzlsberger (georg.zitzlsberger<ad>vsb.cz)
-# Copyright (C) 2020-2021 Georg Zitzlsberger, IT4Innovations,
+# Copyright (C) 2020-2023 Georg Zitzlsberger, IT4Innovations,
 #                         VSB-Technical University of Ostrava, Czech Republic
 #
 # This program is free software: you can redistribute it and/or modify
@@ -25,7 +25,11 @@ class Synthetic_Label():
 
         chmap = np.zeros((window.shape[1], window.shape[2]), dtype=np.int64)
 
-        omni = OMNIBUS(window.shape[1], window.shape[2], 3, sigma, window[0,:,:,0], None)
+        omni = OMNIBUS(window.shape[1],
+                       window.shape[2],
+                       3,
+                       sigma,
+                       window[0,:,:,0], None)
 
         for idx in range(1, len(window)):
             chmap_tmp = omni.PV(window[idx, :, :, 0], None)
@@ -46,7 +50,9 @@ class Synthetic_Label():
         mndwi = np.nan_to_num(es.normalized_diff(green, mir), nan = 0.0)
         mir_ratio = np.nan_to_num(mir/mir2, nan = 0.0)
 
-        return [np.float32(np.mean(blue)), np.float32(np.mean(mir_ratio)), np.float32(np.mean(mndwi**2))]
+        return [np.float32(np.mean(blue)),
+                np.float32(np.mean(mir_ratio)),
+                np.float32(np.mean(mndwi**2))]
 
     @staticmethod
     def ENDISI_LS5(window, beta, A):
@@ -62,7 +68,10 @@ class Synthetic_Label():
 
         mndwi = np.nan_to_num(es.normalized_diff(green, mir), nan = 0.0)
         mir_ratio = np.nan_to_num(mir/mir2, nan = 0.0)
-        res = np.nan_to_num(es.normalized_diff(blue, beta * (mir_ratio + mndwi**2)), nan = 0.0)
+        res = np.nan_to_num(
+                es.normalized_diff(blue,
+                                   beta * (mir_ratio + mndwi**2)),
+                nan = 0.0)
         res = np.where(res + A> 0.0, res + A, 0.0)
 
         mndbi = np.nan_to_num(es.normalized_diff(mir, blue), nan = 0.0)
@@ -73,42 +82,67 @@ class Synthetic_Label():
         res = np.clip(res, 0.0, 1.0)
         return res
 
-
     @staticmethod
-    def compute_label_LS5_ERS12_ENDISI(ers12_ascending, ers12_descending, ls5, ls5_before, ls5_after, shift, beta1, beta3):
+    def compute_label_LS5_ERS12_ENDISI(ers12_ascending,
+                                       ers12_descending,
+                                       ls5,
+                                       ls5_before,
+                                       ls5_after,
+                                       shift,
+                                       beta1,
+                                       beta3):
         import math
         import numpy as np
 
-        assert ((ers12_ascending.shape[1] == ers12_descending.shape[1] == ls5.shape[1]) and \
-               (ers12_ascending.shape[2] == ers12_descending.shape[2] == ls5.shape[2])) ,     \
-               "Tiles of the sources have different sizes ({}, {}, {}/{}, {}, {})".format( \
-                   ers12_ascending.shape[1], ers12_descending.shape[1], ls5.shape[1],      \
-                   ers12_ascending.shape[2], ers12_descending.shape[2], ls5.shape[2])
+        assert ((ers12_ascending.shape[1] ==                                   \
+                    ers12_descending.shape[1] == ls5.shape[1]) and             \
+               (ers12_ascending.shape[2] ==                                    \
+                    ers12_descending.shape[2] == ls5.shape[2])) ,              \
+               "Tiles of the sources have different sizes "                    \
+               "({}, {}, {}/{}, {}, {})".format(                               \
+                   ers12_ascending.shape[1],                                   \
+                   ers12_descending.shape[1],                                  \
+                   ls5.shape[1],                                               \
+                   ers12_ascending.shape[2],                                   \
+                   ers12_descending.shape[2],                                  \
+                   ls5.shape[2])
 
         ls5_before_avg = np.mean(ls5_before, axis=0)
-        ls5_before_ebbi = Synthetic_Label.ENDISI_LS5(ls5_before_avg, beta1, shift)
+        ls5_before_endisi = Synthetic_Label.ENDISI_LS5(ls5_before_avg,
+                                                     beta1,
+                                                     shift)
 
         ls5_after_avg = np.mean(ls5_after, axis=0)
-        ls5_after_ebbi = Synthetic_Label.ENDISI_LS5(ls5_after_avg, beta3, shift)
+        ls5_after_endisi = Synthetic_Label.ENDISI_LS5(ls5_after_avg,
+                                                    beta3,
+                                                    shift)
 
-        ls5_diff = np.abs(ls5_after_ebbi - ls5_before_ebbi)
+        ls5_diff = np.abs(ls5_after_endisi - ls5_before_endisi)
 
-        chmap_asc = Synthetic_Label.omnibus_chmap(ers12_ascending, ers12_ascending.shape[0], 0.1)
-        chmap_dsc = Synthetic_Label.omnibus_chmap(ers12_descending, ers12_descending.shape[0], 0.1)
+        chmap_asc = Synthetic_Label.omnibus_chmap(
+                                    ers12_ascending,
+                                    ers12_ascending.shape[0],
+                                    0.1)
+        chmap_dsc = Synthetic_Label.omnibus_chmap(
+                                    ers12_descending,
+                                    ers12_descending.shape[0],
+                                    0.1)
 
         chmap = (chmap_asc+chmap_dsc)/2
         return np.float32(np.clip(chmap * ls5_diff * 30, 0.0, 1.0))
 
     @staticmethod
-    def compute_label_LS5_ERS12_ENDISI_beta_coeefs(ls5_before, ls5_after):
+    def compute_label_LS5_ERS12_ENDISI_beta_coeffs(ls5_before, ls5_after):
         import math
         import numpy as np
 
         ls5_before_avg = np.mean(ls5_before, axis=0)
-        ls5_before_coeffs = Synthetic_Label.ENDISI_LS5_beta_coeff(ls5_before_avg)
+        ls5_before_coeffs = Synthetic_Label.ENDISI_LS5_beta_coeff(
+                                                        ls5_before_avg)
 
         ls5_after_avg = np.mean(ls5_after, axis=0)
-        ls5_after_coeffs = Synthetic_Label.ENDISI_LS5_beta_coeff(ls5_after_avg)
+        ls5_after_coeffs = Synthetic_Label.ENDISI_LS5_beta_coeff(
+                                                        ls5_after_avg)
 
         return np.array([ls5_before_coeffs, ls5_after_coeffs])
 

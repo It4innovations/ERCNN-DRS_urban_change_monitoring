@@ -186,7 +186,7 @@ def annotate_ds(file, shift, seed, just_timestamps = False,
 
     def generate_beta_coeffs(stack, s2_1, s2_3):
         return tf.ensure_shape(tf.numpy_function(
-                          Synthetic_Label.compute_label_S2_S1_ENDISI_beta_coeefs,
+                          Synthetic_Label.compute_label_S2_S1_ENDISI_beta_coeffs,
                           [s2_1, s2_3], tf.float32),
                                [2, 3])
 

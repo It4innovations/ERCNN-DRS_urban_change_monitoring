@@ -1,6 +1,6 @@
 #
 # Author: Georg Zitzlsberger (georg.zitzlsberger<ad>vsb.cz)
-# Copyright (C) 2020-2021 Georg Zitzlsberger, IT4Innovations,
+# Copyright (C) 2020-2023 Georg Zitzlsberger, IT4Innovations,
 #                         VSB-Technical University of Ostrava, Czech Republic
 #
 # This program is free software: you can redistribute it and/or modify
@@ -42,7 +42,7 @@ class ERCNN_DRS():
         sub_model.add(layers.Activation(activations.relu))
 
         output = layers.TimeDistributed(sub_model,
-                                        name=name)(inputs=inp, mask=mask) \
+                                        name=name)(inputs=inp, mask=mask)      \
                         if timedist else sub_model(inp)
         return output
 
