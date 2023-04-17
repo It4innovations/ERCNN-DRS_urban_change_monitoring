@@ -15,6 +15,12 @@ In the underlying subsequent work, we introduce a novel approach to aggregate mu
 
 As a result, the automatically pre-trained baseline enables a per-window analysis of urban changes, whereas the subsequent transfer tailors the pre-trained network towards a specific AoI with minimal manual efforts while retaining the properties of window based analysis.
 
+Example:  
+Urban changes in Liège 2017-2020 with combined models V1-3. Highlights in red show identified urban changes for every tile. Background image ©2019/20 Google Earth, for reference only.
+<p align="center">
+  <img src="./collateral/s12_grid_Liege_comb_pred.png" />
+</p>
+
 # Training/Validation Datasets
 Thanks to the data providers, we can make available the [`training/validation datasets`](https://drive.google.com/drive/folders/1CLTna5fNLTEEWwELK6hXoN5C42yaXvQf?usp=sharing) on Google Drive.
 
