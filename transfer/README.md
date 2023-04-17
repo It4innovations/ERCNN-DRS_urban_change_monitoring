@@ -35,11 +35,17 @@ Execute the training script [`training/train.py`](./training/train.py). It is re
 Change the variable `exp` to the version to train, e.g. `exp = "V1"`.
 
 # Trained Models
-We provide four trained [`models`](./models/):
-  - [`baseline.hdf5`](./models/baseline.hdf5): Original, pre-trained model (see [original work](../))
-  - [`V1_111.h5`](./models/V1_111.h5): First transferred model from partial cross-validation (epoch 111)
-  - [`V2_78.h5`](./models/V2_78.h5): Second transferred model from partial cross-validation (epoch 78)
-  - [`V3_107.h5`](./models/V3_107.h5): Third transferred model from partial cross-validation (epoch 107)
+We provide all trained [`models`](./models/):
+- Pre-trained model:
+  - [`baseline.hdf5`](./models/baseline.hdf5): see [original work](../)
+- Ab initio trained models:
+  - [`V1_abinitio_149.h5`](./models/V1_abinitio_149.h5): First ab initio model from partial cross-validation (epoch 149)
+  - [`V2_abinitio_147.h5`](./models/V2_abinitio_147.h5): Second ab initio model from partial cross-validation (epoch 147)
+  - [`V3_abinitio_181.h5`](./models/V3_abinitio_181.h5): Third ab initio model from partial cross-validation (epoch 181)
+- Transferred models:
+  - [`V1_transfer_111.h5`](./models/V1_transfer_111.h5): First transferred model from partial cross-validation (epoch 111)
+  - [`V2_transfer_78.h5`](./models/V2_transfer_78.h5): Second transferred model from partial cross-validation (epoch 78)
+  - [`V3_transfer_107.h5`](./models/V3_transfer_107.h5): Third transferred model from partial cross-validation (epoch 107)
 
 
 # Paper and Citation
