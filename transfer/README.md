@@ -48,7 +48,7 @@ Change the variable `exp` to the version to train, e.g. `exp = "V1"`.
 # Trained Models
 We provide all trained [`models`](./models/):
 - Pre-trained model:
-  - [`baseline.hdf5`](./models/baseline.hdf5): see [original work](../)
+  - [`baseline.hdf5`](./models/baseline.hdf5): see [original work](../../../)
 - Ab initio trained models:
   - [`V1_abinitio_149.h5`](./models/V1_abinitio_149.h5): First ab initio model from partial cross-validation (epoch 149)
   - [`V2_abinitio_147.h5`](./models/V2_abinitio_147.h5): Second ab initio model from partial cross-validation (epoch 147)
