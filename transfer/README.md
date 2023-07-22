@@ -26,6 +26,8 @@ Changes with a six month moving window with window mid-point range March 2017 - 
   <img src="./collateral/Liege_01_2017-01_2021.gif" />
 </p>
 
+Video file is located [here](./collateral/Liege_01_2017-01_2021.mp4).
+
 # Training/Validation Datasets
 Thanks to the data providers, we can make available the [`training/validation datasets`](https://drive.google.com/drive/folders/1CLTna5fNLTEEWwELK6hXoN5C42yaXvQf?usp=sharing) on Google Drive.
 
