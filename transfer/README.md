@@ -63,7 +63,6 @@ We provide all trained [`models`](./models/):
 # Other Use Case
 A similar transfer method has also been used to monitor urban changes in Mariupol/Ukraine 2022/23. That use case is hosted as a dedicated project [here](https://github.com/It4innovations/urban_change_monitoring_mariupol_ua).
 
-We provide all tra
 # Paper and Citation
 TBD
 
