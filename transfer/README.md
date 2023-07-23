@@ -60,7 +60,10 @@ We provide all trained [`models`](./models/):
   - [`V2_transfer_78.h5`](./models/V2_transfer_78.h5): Second transferred model from partial cross-validation (epoch 78)
   - [`V3_transfer_107.h5`](./models/V3_transfer_107.h5): Third transferred model from partial cross-validation (epoch 107)
 
+# Other Use Case
+A similar transfer method has also been used to monitor urban changes in Mariupol/Ukraine 2022/23. That use case is hosted as a dedicated project [here](https://github.com/It4innovations/urban_change_monitoring_mariupol_ua).
 
+We provide all tra
 # Paper and Citation
 TBD
 
