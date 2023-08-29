@@ -64,14 +64,20 @@ We provide all trained [`models`](./models/):
 A similar transfer method has also been used to monitor urban changes in Mariupol/Ukraine 2022/23. That use case is hosted as a dedicated project [here](https://github.com/It4innovations/urban_change_monitoring_mariupol_ua).
 
 # Paper and Citation
-The full paper can be found at [International Journal of Remote Sensing](TBD). **not online yet**
+The full paper can be found at [International Journal of Remote Sensing](https://doi.org/10.1080/01431161.2023.2243021).
 
-    @Article{doi:10.1080/01431161.2023.2243021,
-        AUTHOR = {Zitzlsberger,Georg and Podhoranyi,Michal and Martinovic,Jan},
-        TITLE = {A Practically Feasible Transfer Learning Method for Deep-Temporal Urban Change Monitoring},
-        JOURNAL = {International Journal of Remote Sensing},
-        YEAR = {2023},
-        DOI = {10.1080/01431161.2023.2243021},
+    @article{doi:10.1080/01431161.2023.2243021,
+        author = {Georg Zitzlsberger and Michal Podhoranyi and Jan Martinovič},
+        title = {A practically feasible transfer learning method for deep-temporal urban change monitoring},
+        journal = {International Journal of Remote Sensing},
+        volume = {44},
+        number = {17},
+        pages = {5172-5206},
+        year  = {2023},
+        publisher = {Taylor & Francis},
+        doi = {10.1080/01431161.2023.2243021},
+        URL = { https://doi.org/10.1080/01431161.2023.2243021 },
+        eprint = { https://doi.org/10.1080/01431161.2023.2243021 }
     }
 
 # Contact
